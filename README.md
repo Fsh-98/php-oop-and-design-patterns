@@ -1,1 +1,3 @@
-## php-OOP-design-patterns-and-principles
+## Learning Resources
+
+* [Object Oriented PHP Bangla Tutorial](shorturl.at/swEUZ)
