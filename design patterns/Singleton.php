@@ -1,22 +1,29 @@
 <?php
 
-    class Singleton {
-        
-        private static $instance = null;
-        
-        private function __construct()
-        {
+class Singleton
+{
 
-        }
+    private static $instances = [];
 
-        public static function getInstance()
-        {
-            if (self::$instance === null)
-            {
-                self::$instance = new Singleton();
-            }
-        
-            return self::$instance;
-        }
+    private function __construct()
+    {
+
     }
+
+    private function __clone()
+    {
+
+    }
+
+    public static function getInstance()
+    {
+        $class = get_called_class();
+
+        if (!isset(static::$instances[$class])) {
+            self::$instances[$class] = new static();
+        }
+
+        return self::$instances[$class];
+    }
+}
 ?>

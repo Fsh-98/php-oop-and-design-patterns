@@ -1,9 +1,11 @@
 <?php
-    include('Singleton.php');
+    require_once('DB.php');
+    require_once('Logger.php');
 
-    $onlyObject = Singleton::getInstance();
+    $db = DB::getInstance();
+    $logger = Logger::getInstance();
 
-    $testObject = Singleton::getInstance();
+    var_dump($db);
 
-    var_dump($onlyObject === $testObject);
+    var_dump($logger);
 ?>
